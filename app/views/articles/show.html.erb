@@ -20,6 +20,9 @@
     <%= comment.body %>
   </p>
 
+ 
+
+  
   <p>
   	<%= link_to 'Destroy Comment', [comment.article, comment],
                method: :delete,
@@ -40,6 +43,8 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </p>
+  
+  
   <p>
     <%= f.submit %>
   </p>

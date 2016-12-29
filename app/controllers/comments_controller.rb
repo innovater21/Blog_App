@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 	def create
 	    @article = Article.find(params[:article_id])
 	    @comment = @article.comments.create(comment_params)
+	    @like= @comment.like.create(like_params)
 	    redirect_to article_path(@article)
   	end
 
@@ -16,5 +17,9 @@ class CommentsController < ApplicationController
   	private
 	    def comment_params
 	      params.require(:comment).permit(:commenter, :body)
+	    end
+
+	    def like_params
+	    	params.require(:like).permit(:rating)
 	    end
 end
